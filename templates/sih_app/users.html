@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+{% extends 'sih_app/base.html' %}
+    {% block body_block %}
+
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a class="navbar-brand" href="{% url 'index' %}">GeoPLant</a></li>
+                <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
+                <li><a class="navbar-link" href="{% url 'sih_app:users' %}">Register Plant</a></li>
+        
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+            <h1>Welcome!</h1>
+            <h2>Register your plant here :</h2>
+            <!-- <form method="POST">
+                
+                {{ form.Plant_name }}
+                {% csrf_token %}
+                <input type="submit" class="btn btn-primary" Value="Submit">
+            </form> -->
+        
+            <form class="form-horizontal" method="POST">
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">Plant Name</label>
+                      <div class="col-sm-10">
+                            {{ form.plant_name }}
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label">Plant Breed</label>
+                        <div class="col-sm-10">
+                            {{ form.plant_breed}}
+                            
+                      </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Location</label>
+                            <div class="col-sm-10">
+                                  {{ form.location }}
+                            </div>
+                    </div>
+                    {% csrf_token %}
+                    <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label"></label>
+                              <div class="col-sm-10">
+                                    <input type="submit" class="btn btn-primary" Value="Submit">
+                                  
+                    </div>
+                    
+            </form>
+    </div>
+    {% endblock %}
