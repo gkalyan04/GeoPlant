@@ -4,9 +4,10 @@ from django.db import models
 class Plant(models.Model):
     plant_name = models.CharField(max_length=264)
     plant_breed = models.CharField(max_length=264)
+    time_created = models.DateTimeField()
     location = models.CharField(max_length=264)
-    photo = models.ImageField(default="default.jpg")
+    photo = models.ImageField(upload_to="photo")
 
     def __str__(self):
-        return self.plant_name
+        return self.plant_namessss
     

@@ -22,4 +22,4 @@ urlpatterns = [
     url(r'^$',views.index,name='index'),
     url(r'^admin/', admin.site.urls),
     url(r'^sih_app/',include('sih_app.urls'))
-]
+] 
