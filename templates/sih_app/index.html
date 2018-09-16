@@ -3,7 +3,7 @@
     {% block body_block %}
     <div class="jumbotron">
             <h1>Welcome!</h1>
-            <h2>Go to <a href="http://127.0.0.1:8000/users/">/plants </a>to Register your Plant!</h2>
+            <h2>Go to <a href="{% url 'sih_app:users' %}">/plants </a>to Register your Plant!</h2>
     </div>
 
     {% endblock %}   

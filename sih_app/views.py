@@ -21,8 +21,8 @@ def users(request):
     return render(request,'sih_app/users.html',{'form':form})
 
 
-def other(request):
-    return render(request,'sih_app/index.html')
+# def other(request):
+#     return render(request,'sih_app/index.html')
 
-def relative(request):
-    return render(request,'sih_app/relative_url_templates.html')
+# def relative(request):
+#     return render(request,'sih_app/relative_url_templates.html')

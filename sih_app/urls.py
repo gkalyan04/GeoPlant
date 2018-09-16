@@ -5,7 +5,7 @@ from sih_app import views
 app_name = 'sih_app'
 
 urlpatterns = [
-    url(r'^relative/$',views.relative,name='relative'),
-    url(r'^other/$',views.other,name='other'),
+    url(r'^users/$',views.users,name='users'),
+    # url(r'^other/$',views.other,name='other'),
     
 ]
