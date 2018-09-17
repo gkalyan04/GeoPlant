@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 
 {% extends 'sih_app/base.html' %}
-{% load staticfiles %}
-    {% block body_block %}
+{% load crispy_forms_tags %}
 
+    {% block body_block %}
+    <br>
     <div class="container">
-            <h1>Welcome!</h1>
+            <div style="" class="jumbotron shadow-lg p-3 mb-5 bg-white rounded">
+        
+                        <h1>Welcome!</h1> 
             <h2>Register your plant here :</h2>
             <!-- <form method="POST">
                 
@@ -14,46 +17,11 @@
                 <input type="submit" class="btn btn-primary" Value="Submit">
             </form> -->
         
-            <form class="form-horizontal" method="POST">
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-2 control-label">Plant Name</label>
-                      <div class="col-sm-10">
-                            {{ form.plant_name }}
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="inputEmail3" class="col-sm-2 control-label">Plant Breed</label>
-                        <div class="col-sm-10">
-                            {{ form.plant_breed}}
-                            
-                      </div>
-                    </div>
-                    <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Time</label>
-                            <div class="col-sm-10">
-                                  {{ form.time_created}}
-                            </div>
-                    </div>
-                    <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Location</label>
-                            <div class="col-sm-10">
-                                  {{ form.location }}
-                            </div>
-                    </div>
-                    <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Upload Image</label>
-                            <div class="col-sm-10">
-                                  {{ form.photo }}
-                            </div>
-                    </div>
-                    {% csrf_token %}
-                    <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                              <div class="col-sm-10">
-                                    <input type="submit" class="btn btn-primary" Value="Submit">
-                                  
-                    </div>
-                    
-            </form>
+            <form method="POST">
+                         <span style="size:12px">{{ form|crispy}}</span> 
+                         {% csrf_token %} 
+                         <input type="submit" class="btn btn-primary" Value="Submit">
+                </form> 
+                </div>
     </div>
     {% endblock %}
